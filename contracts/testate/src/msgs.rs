@@ -15,9 +15,9 @@ pub enum ExecuteMsg {
     SetClaimableAmount {amount:Uint128},
 }
 
-#[cw_serde]
-pub enum QueryMsg {
-    TotalSupply {
+// #[cw_serde]
+// pub enum QueryMsg {
+//     TotalSupply {
 
-    },
-}
+//     },
+// }

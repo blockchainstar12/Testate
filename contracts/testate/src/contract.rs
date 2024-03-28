@@ -1,9 +1,9 @@
 use crate::error::ContractError;
-use crate::msgs::{ExecuteMsg, InstantiateMsg, QueryMsg};
+use crate::msgs::{ExecuteMsg, InstantiateMsg};
 use crate::state::{TOKEN_SUPPLY, MCAPW, CLAIMED_LIST};
 use cosmwasm_std::{
     entry_point, CosmosMsg, DepsMut, Env, MessageInfo, Response, StdError,
-    Uint256,StdResult, Deps,BankMsg, Coin
+    Uint256,BankMsg, Coin
 };
 use nibiru_std::proto::cosmos::{self, base};
 use nibiru_std::proto::{nibiru, NibiruStargateMsg};
@@ -170,17 +170,17 @@ pub fn execute(
 }
 
 // TODO
-#[entry_point]
-pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Option<Uint256>> {
-    // todo!()
-    match msg {
-        QueryMsg::TotalSupply {} => {
-            let token_supply =
-                TOKEN_SUPPLY.may_load(deps.storage, "utestate")?;
-            Ok(token_supply)
-        }
-    }
-}
+// #[entry_point]
+// pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Option<Uint256>> {
+//     // todo!()
+//     match msg {
+//         QueryMsg::TotalSupply {} => {
+//             let token_supply =
+//                 TOKEN_SUPPLY.may_load(deps.storage, "utestate")?;
+//             Ok(token_supply)
+//         }
+//     }
+// }
 
 #[cfg(test)]
 mod tests {
