@@ -24,7 +24,7 @@ pub fn instantiate(
     }
     .into_stargate_msg();
 
-    let _ = MCAPW.save(deps.storage, "mcapw", &msg.mcapw);
+    // let _ = MCAPW.save(deps.storage, "mcapw", &msg.mcapw);
     Ok(Response::new()
         // .add_event()
         .add_message(cosmos_msg))
@@ -195,7 +195,7 @@ mod tests {
     use cw::testing::mock_dependencies;
 
     fn init(deps: DepsMut) -> Result<cw::Response, ContractError> {
-        instantiate(deps, mock_env(), mock_info("none", &[]), InstantiateMsg {mcapw:5000000000, minter:"nibi1pl6r92ncwyqa6s3cdxjzprnsg5snn2mare34f0".to_string()})
+        instantiate(deps, mock_env(), mock_info("none", &[]), InstantiateMsg {minter:"nibi1pl6r92ncwyqa6s3cdxjzprnsg5snn2mare34f0".to_string()})
     }
 
     #[test]

@@ -2,7 +2,7 @@ use cosmwasm_schema::cw_serde;
 use cosmwasm_std::{Uint128};
 
 #[cw_serde]
-pub struct InstantiateMsg {pub mcapw: Uint128, pub minter:String}
+pub struct InstantiateMsg {pub minter:String}
 
 #[cw_serde]
 pub enum ExecuteMsg {
